@@ -1,4 +1,5 @@
 ## php-academic
+
 For learn and assignment (Ubuntu 20.04 lts)
 
 ```
@@ -20,7 +21,9 @@ or
 3.2. http://localhost/dashboard/
 http://localhost/phpmyadmin/
 ```
+
 OR
+
 ```
 Now your xampp has been started. After this place your php file in
 
