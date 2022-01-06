@@ -15,11 +15,10 @@
     $books = json_decode($booksJson, true);
     ?>
     <form action="./search.php" method="POST">
-        <input type="text" name="title" placeholder="Search with title">
+        <input type="text" name="title" placeholder="Search with book title">
         <input type="submit" value="Search">
-        <a href="./create.php"><button style="color: green; align:right">Add Book</button></a>
     </form>
-    
+    <a href="./create.php"><button>add</button></a>
     <br>
     <br>
     <table border="1">
@@ -34,13 +33,13 @@
         </tr>
         <?php foreach ($books as $key => $book) : ?>
             <tr>
-                <td><?php echo $book['id']; ?></td>
+                <td><?php echo $key+1 ?></td>
                 <td><?php echo $book['title']; ?></td>
                 <td><?php echo $book['author']; ?></td>
                 <td><?php echo $book['available']; ?></td>
                 <td><?php echo $book['pages']; ?></td>
                 <td><?php echo $book['isbn']; ?></td>
-                <td> <a href="<?php echo './delete.php?id=' . (int)($key + 1); ?>">
+                <td> <a onclick="return confirm('Are you sure you want to delete this item')" href="<?php echo './delete.php?id=' . (int)($key + 1); ?>">
                         <button class="btn-delete">Delete</button>
                     </a>
                 </td>
@@ -50,7 +49,6 @@
     </table>
     <br>
     <br>
-    <a href="./create.php"><button>add</button></a>
 </body>
 
 </html>

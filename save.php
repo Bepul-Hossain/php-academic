@@ -19,7 +19,7 @@ $books = json_decode($booksJson, true);
         $all = array_merge($books,$data);
         file_put_contents('./books.json',json_encode($all));
         echo sizeof($data);
-    
+        header('Location:index.php');
     ?>
 </body>
 

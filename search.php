@@ -11,13 +11,13 @@
         $booksJson = file_get_contents('books.json');
         $books = json_decode($booksJson, true);
         $title =$_POST['title'];
-       // echo $title;
+        echo $title;
         
         $query = [];
         $index = 0;
 
        foreach($books as $key => $item){
-           //echo $item;
+           echo $item;
            if($title == $item['title']){
                array_push($query,$item);
                $key1 =$key;
@@ -38,7 +38,7 @@
         </tr>
         <?php foreach ($query as $key => $item) : ?>
             <tr>
-                <td><?php echo $item['id']; ?></td>
+                <td><?php echo $key+1 ?></td>
                 <td><?php echo $item['title']; ?></td>
                 <td><?php echo $item['author']; ?></td>
                 <td><?php echo $item['available']; ?></td>
